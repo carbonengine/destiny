@@ -12,6 +12,7 @@ target_sources(DestinyTest PRIVATE
     TestAABB.cpp
     TestBoxShape.cpp
     TestCollision.cpp
+    TestPartition.cpp
     TestPlane.cpp
     TestTriangle.cpp
     TestVector3d.cpp
