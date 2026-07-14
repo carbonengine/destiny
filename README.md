@@ -1,4 +1,7 @@
 # Destiny
+
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
 > Core game world simulation engine for popular spaceship based MMO Eve Online.
 
 ## Building
