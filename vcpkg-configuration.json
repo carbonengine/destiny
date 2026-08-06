@@ -7,8 +7,9 @@
   "registries": [
     {
       "kind": "git",
-      "repository": "git@github.com:carbonengine/vcpkg-registry.git",
-      "baseline": "2027e0c9d34193f468438589c4e6bb25996e823d",
+      "repository": "git@github.com:ccptoebeans/vcpkg-registry.git",
+      "baseline": "573e665ef92874afc000187b7358f0ff83e0aea8",
+      "reference": "VCPKG_PLATFORM_TOOLSET_VERSION",
       "packages": ["python3", "carbon-*", "tracy", "greenlet", "ccp-debug-info", "crashpad", "zlib"]
     }
   ]
