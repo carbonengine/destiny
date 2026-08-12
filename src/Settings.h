@@ -3,7 +3,7 @@
 #pragma once
 #ifndef DESTINY_SETTINGS_H
 #define DESTINY_SETTINGS_H
-#include "stdafx.h"
+#include "StdAfx.h"
 
 
 constexpr size_t g_collisionMaxIterationsDefault = 20;

@@ -1,6 +1,6 @@
 // Copyright © 2014 CCP ehf.
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include <math.h>
 #ifdef _MSC_VER
 #include <fpieee.h>

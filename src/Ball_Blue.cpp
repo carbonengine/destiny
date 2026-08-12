@@ -1,6 +1,6 @@
 // Copyright © 2014 CCP ehf.
 
-#include "stdafx.h"
+#include "StdAfx.h"
 
 #include "Ball.h"
 #include "Ballpark.h"
