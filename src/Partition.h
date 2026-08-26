@@ -43,7 +43,6 @@ typedef std::unordered_map<ID, Ball *> DictOfBalls;
 typedef std::vector<Ball *> VectorOfBalls;
 typedef std::vector<StaticCollidable *> VectorOfStaticCollidables;
 typedef std::pair<ID, Ball*> DictEntry;
-typedef std::unordered_map<Key,Box *,std::hash<size_t>> MapOfBoxes;
 typedef std::vector<Box *> VectorOfBoxes;
 typedef std::back_insert_iterator< VectorOfBoxes > BoxVectorInsertor;
 
@@ -80,12 +79,6 @@ public:
         if (iz > k.iz) return false;
         return n<k.n;
     }
-    //hash key
-    operator size_t () const {
-        return std::hash<int64_t>()((ix<<3) + (iy<<2) + (iz<<1) + n);
-    }
-
-
     int64_t ix;
     int64_t iy;
     int64_t iz;
@@ -107,6 +100,27 @@ public:
             iz = n-1;
     }
 };
+
+struct KeyHash
+{
+    size_t operator()(const Key& key) const noexcept
+    {
+        size_t seed = 0;
+        const auto combine = [&seed](int64_t value)
+        {
+            const size_t valueHash = std::hash<int64_t>{}(value);
+            seed ^= valueHash + static_cast<size_t>(0x9e3779b9U) + (seed << 6) + (seed >> 2);
+        };
+
+        combine(key.ix);
+        combine(key.iy);
+        combine(key.iz);
+        combine(key.n);
+        return seed;
+    }
+};
+
+typedef std::unordered_map<Key, Box*, KeyHash> MapOfBoxes;
 
 
 class Partition
