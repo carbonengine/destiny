@@ -19,6 +19,7 @@ target_link_libraries(destiny PUBLIC Blue CcpCore PRIVATE CcpMath)
 set(PUBLIC_HEADER_FILES_INCLUDE
     include/IEveReferencePoint.h
     include/IEveBallpark.h
+    include/IEveObstructionQuery.h
 )
 
 set(_SOURCES
